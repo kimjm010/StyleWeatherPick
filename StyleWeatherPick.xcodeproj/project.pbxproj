@@ -15,6 +15,11 @@
 		F5E2163E294F5066006238A1 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = F5E2163D294F5066006238A1 /* SnapKit */; };
 		F5E21641294F51AB006238A1 /* MainViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E21640294F51AB006238A1 /* MainViewController+Extension.swift */; };
 		F5E21645294F5AFA006238A1 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = F5E21644294F5AFA006238A1 /* Then */; };
+		F5E2164A294F5C77006238A1 /* NanumGothic-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F5E21647294F5C77006238A1 /* NanumGothic-Regular.ttf */; };
+		F5E2164B294F5C77006238A1 /* NanumGothic-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F5E21648294F5C77006238A1 /* NanumGothic-Bold.ttf */; };
+		F5E2164C294F5C77006238A1 /* NanumGothic-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F5E21649294F5C77006238A1 /* NanumGothic-ExtraBold.ttf */; };
+		F5E2164E294F5D71006238A1 /* Font+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E2164D294F5D71006238A1 /* Font+Extension.swift */; };
+		F5E216552950C13B006238A1 /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E216542950C13B006238A1 /* Styles.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +31,11 @@
 		F5E21634294F469A006238A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F5E2163A294F4700006238A1 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		F5E21640294F51AB006238A1 /* MainViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+Extension.swift"; sourceTree = "<group>"; };
+		F5E21647294F5C77006238A1 /* NanumGothic-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NanumGothic-Regular.ttf"; sourceTree = "<group>"; };
+		F5E21648294F5C77006238A1 /* NanumGothic-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NanumGothic-Bold.ttf"; sourceTree = "<group>"; };
+		F5E21649294F5C77006238A1 /* NanumGothic-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NanumGothic-ExtraBold.ttf"; sourceTree = "<group>"; };
+		F5E2164D294F5D71006238A1 /* Font+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extension.swift"; sourceTree = "<group>"; };
+		F5E216542950C13B006238A1 /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +70,8 @@
 		F5E21625294F469A006238A1 /* StyleWeatherPick */ = {
 			isa = PBXGroup;
 			children = (
+				F5E2164F2950BDD7006238A1 /* Model */,
+				F5E21646294F5C66006238A1 /* Fonts */,
 				F5E21626294F469A006238A1 /* AppDelegate.swift */,
 				F5E21628294F469A006238A1 /* SceneDelegate.swift */,
 				F5E2162F294F469A006238A1 /* Assets.xcassets */,
@@ -75,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				F5E21640294F51AB006238A1 /* MainViewController+Extension.swift */,
+				F5E2164D294F5D71006238A1 /* Font+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -85,6 +98,24 @@
 				F5E2163A294F4700006238A1 /* MainViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		F5E21646294F5C66006238A1 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				F5E21648294F5C77006238A1 /* NanumGothic-Bold.ttf */,
+				F5E21649294F5C77006238A1 /* NanumGothic-ExtraBold.ttf */,
+				F5E21647294F5C77006238A1 /* NanumGothic-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		F5E2164F2950BDD7006238A1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F5E216542950C13B006238A1 /* Styles.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -153,8 +184,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5E2164C294F5C77006238A1 /* NanumGothic-ExtraBold.ttf in Resources */,
+				F5E2164A294F5C77006238A1 /* NanumGothic-Regular.ttf in Resources */,
 				F5E21633294F469A006238A1 /* LaunchScreen.storyboard in Resources */,
 				F5E21630294F469A006238A1 /* Assets.xcassets in Resources */,
+				F5E2164B294F5C77006238A1 /* NanumGothic-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,6 +200,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5E2163B294F4700006238A1 /* MainViewController.swift in Sources */,
+				F5E2164E294F5D71006238A1 /* Font+Extension.swift in Sources */,
+				F5E216552950C13B006238A1 /* Styles.swift in Sources */,
 				F5E21641294F51AB006238A1 /* MainViewController+Extension.swift in Sources */,
 				F5E21627294F469A006238A1 /* AppDelegate.swift in Sources */,
 				F5E21629294F469A006238A1 /* SceneDelegate.swift in Sources */,
