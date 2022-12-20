@@ -10,14 +10,14 @@ import UIKit
 
 extension UIFont {
     static func getBoldFont() -> String {
-        return "NanumGothic-Bold"
+        return "NanumGothicBold"
     }
     
     static func getExtraBoldFont() -> String {
-        return "NanumGothic-ExtraBold"
+        return "NanumGothicExtraBold"
     }
     
     static func getRegularFont() -> String {
-        return "NanumGothic-Regular"
+        return "NanumGothic"
     }
 }
