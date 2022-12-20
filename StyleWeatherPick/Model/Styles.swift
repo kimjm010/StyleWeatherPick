@@ -8,7 +8,7 @@
 import Foundation
 
 enum Styles {
-    enum MenStyles {
+    enum MenStyles: String {
         case Street
         case Hiphop
         case Casual
@@ -17,7 +17,7 @@ enum Styles {
         case Minimalism
     }
     
-    enum WomenStyles {
+    enum WomenStyles: String {
         case Street
         case Hiphop
         case Casual

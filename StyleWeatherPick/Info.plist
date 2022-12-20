@@ -4,9 +4,9 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string>NanumGothic-Bold</string>
-		<string>NanumGothic-Regular</string>
-		<string>NanumGothic-ExtraBold</string>
+		<string>NanumGothic-Bold.ttf</string>
+		<string>NanumGothic-Regular.ttf</string>
+		<string>NanumGothic-ExtraBold.ttf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
