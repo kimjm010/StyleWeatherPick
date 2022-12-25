@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F517A4162952F8C900DF8917 /* MainWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F517A4152952F8C900DF8917 /* MainWeatherView.swift */; };
+		F517A4192952FE9C00DF8917 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F517A4182952FE9C00DF8917 /* BackgroundView.swift */; };
+		F517A41B29531CC300DF8917 /* TopStyleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F517A41A29531CC300DF8917 /* TopStyleView.swift */; };
+		F5261771295754C0000342DF /* BottomStyleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5261770295754C0000342DF /* BottomStyleView.swift */; };
 		F5E21627294F469A006238A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E21626294F469A006238A1 /* AppDelegate.swift */; };
 		F5E21629294F469A006238A1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E21628294F469A006238A1 /* SceneDelegate.swift */; };
 		F5E21630294F469A006238A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5E2162F294F469A006238A1 /* Assets.xcassets */; };
@@ -23,6 +27,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F517A4152952F8C900DF8917 /* MainWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWeatherView.swift; sourceTree = "<group>"; };
+		F517A4182952FE9C00DF8917 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
+		F517A41A29531CC300DF8917 /* TopStyleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopStyleView.swift; sourceTree = "<group>"; };
+		F5261770295754C0000342DF /* BottomStyleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomStyleView.swift; sourceTree = "<group>"; };
 		F5E21623294F469A006238A1 /* StyleWeatherPick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StyleWeatherPick.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5E21626294F469A006238A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F5E21628294F469A006238A1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +59,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F517A4122952F89200DF8917 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F517A4142952F8BA00DF8917 /* Main */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F517A4142952F8BA00DF8917 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				F517A4182952FE9C00DF8917 /* BackgroundView.swift */,
+				F517A4152952F8C900DF8917 /* MainWeatherView.swift */,
+				F517A41A29531CC300DF8917 /* TopStyleView.swift */,
+				F5261770295754C0000342DF /* BottomStyleView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		F5E2161A294F469A006238A1 = {
 			isa = PBXGroup;
 			children = (
@@ -78,6 +105,7 @@
 				F5E21631294F469A006238A1 /* LaunchScreen.storyboard */,
 				F5E21634294F469A006238A1 /* Info.plist */,
 				F5E21642294F5AC1006238A1 /* ViewControllers */,
+				F517A4122952F89200DF8917 /* Views */,
 				F5E2163F294F5197006238A1 /* Extensions */,
 			);
 			path = StyleWeatherPick;
@@ -199,10 +227,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F517A41B29531CC300DF8917 /* TopStyleView.swift in Sources */,
+				F517A4162952F8C900DF8917 /* MainWeatherView.swift in Sources */,
 				F5E2163B294F4700006238A1 /* MainViewController.swift in Sources */,
+				F517A4192952FE9C00DF8917 /* BackgroundView.swift in Sources */,
 				F5E2164E294F5D71006238A1 /* Font+Extension.swift in Sources */,
 				F5E216552950C13B006238A1 /* Styles.swift in Sources */,
 				F5E21641294F51AB006238A1 /* MainViewController+Extension.swift in Sources */,
+				F5261771295754C0000342DF /* BottomStyleView.swift in Sources */,
 				F5E21627294F469A006238A1 /* AppDelegate.swift in Sources */,
 				F5E21629294F469A006238A1 /* SceneDelegate.swift in Sources */,
 			);
@@ -272,7 +304,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -326,7 +358,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
