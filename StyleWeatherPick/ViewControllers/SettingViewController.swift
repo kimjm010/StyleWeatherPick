@@ -17,8 +17,22 @@ class SettingViewController: UIViewController {
         self.view.backgroundColor = .systemGray6
         
         configuerUI()
+        printFont()
+    }
+    
+    private func printFont() {
+        for family in UIFont.familyNames {
+            print("\(family)")
+            
+            for names in UIFont.fontNames(forFamilyName: family) {
+            print("== \(names)")
+                
+            }
+        }
     }
 }
+
+
 
 
 
@@ -84,7 +98,7 @@ extension SettingViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     private func createGenderStackView() -> UIStackView {
         lazy var genderLabel = UILabel().then {
             $0.text = "Gender"
-            $0.font = .systemFont(ofSize: 25, weight: .bold)
+            $0.font = UIFont.returnNanumGothicExtraBold(size: 25)
             $0.textAlignment = .left
         }
         
@@ -127,7 +141,7 @@ extension SettingViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     private func createAgeStackView() -> UIStackView {
         lazy var ageLabel = UILabel().then {
             $0.text = "Age"
-            $0.font = .systemFont(ofSize: 25, weight: .bold)
+            $0.font = UIFont.returnNanumGothicExtraBold(size: 25)
             $0.textAlignment = .left
         }
         
@@ -173,13 +187,12 @@ extension SettingViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     private func createActivityStackView() -> UIStackView {
         lazy var caategoryLabel = UILabel().then {
             $0.text = "Activity Category"
-            $0.font = .systemFont(ofSize: 25, weight: .bold)
+            $0.font = UIFont.returnNanumGothicExtraBold(size: 25)
             $0.textAlignment = .left
         }
         
         let activitySegmentedControl = createSegmentedControl(first: "I prefer outdoor activity",
                                                               second: "I prefer indoor activity")
-        
         
         lazy var segmentedControlContainerView = UIView().then {
             $0.addSubview(activitySegmentedControl)
@@ -217,7 +230,7 @@ extension SettingViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     private func createTimeStackView() -> UIStackView {
         lazy var timeLabel = UILabel().then {
             $0.text = "Activity Time"
-            $0.font = .systemFont(ofSize: 25, weight: .bold)
+            $0.font = UIFont.returnNanumGothicExtraBold(size: 25)
             $0.textAlignment = .left
         }
         
@@ -261,7 +274,7 @@ extension SettingViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     private func createSentivityStackView() -> UIStackView {
         lazy var sentivitityLabel = UILabel().then {
             $0.text = "Temperature-Sensitivity"
-            $0.font = .systemFont(ofSize: 25, weight: .bold)
+            $0.font = UIFont.returnNanumGothicExtraBold(size: 25)
             $0.textAlignment = .left
         }
         
@@ -306,7 +319,7 @@ extension SettingViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     private func createStyleStackView() -> UIStackView {
         lazy var sentivitityLabel = UILabel().then {
             $0.text = "Preference Style"
-            $0.font = .systemFont(ofSize: 25, weight: .bold)
+            $0.font = UIFont.returnNanumGothicExtraBold(size: 25)
             $0.textAlignment = .left
         }
         
