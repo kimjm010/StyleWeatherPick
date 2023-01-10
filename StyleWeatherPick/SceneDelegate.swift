@@ -17,7 +17,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         
-        let viewController = MainViewController()
+        #warning("Todo: - MainViewController UI 완선하고 코드 수정해야 함")
+//        let viewController = MainViewController()
+        let viewController = SettingViewController()
         window?.rootViewController = viewController
         
         window?.makeKeyAndVisible()

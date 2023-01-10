@@ -11,6 +11,7 @@
 		F517A4192952FE9C00DF8917 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F517A4182952FE9C00DF8917 /* BackgroundView.swift */; };
 		F517A41B29531CC300DF8917 /* TopStyleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F517A41A29531CC300DF8917 /* TopStyleView.swift */; };
 		F5261771295754C0000342DF /* BottomStyleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5261770295754C0000342DF /* BottomStyleView.swift */; };
+		F5E19A3D29646FCD00CCD00A /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E19A3C29646FCD00CCD00A /* SettingViewController.swift */; };
 		F5E21627294F469A006238A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E21626294F469A006238A1 /* AppDelegate.swift */; };
 		F5E21629294F469A006238A1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E21628294F469A006238A1 /* SceneDelegate.swift */; };
 		F5E21630294F469A006238A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5E2162F294F469A006238A1 /* Assets.xcassets */; };
@@ -24,6 +25,11 @@
 		F5E2164C294F5C77006238A1 /* NanumGothic-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F5E21649294F5C77006238A1 /* NanumGothic-ExtraBold.ttf */; };
 		F5E2164E294F5D71006238A1 /* Font+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E2164D294F5D71006238A1 /* Font+Extension.swift */; };
 		F5E216552950C13B006238A1 /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E216542950C13B006238A1 /* Styles.swift */; };
+		F5EE6D76295ED8B600C36526 /* StyleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EE6D75295ED8B600C36526 /* StyleCollectionViewCell.swift */; };
+		F5EE6D79295EE46100C36526 /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = F5EE6D78295EE46100C36526 /* RxBlocking */; };
+		F5EE6D7B295EE46100C36526 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = F5EE6D7A295EE46100C36526 /* RxCocoa */; };
+		F5EE6D7D295EE46100C36526 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = F5EE6D7C295EE46100C36526 /* RxRelay */; };
+		F5EE6D7F295EE46100C36526 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F5EE6D7E295EE46100C36526 /* RxSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +37,7 @@
 		F517A4182952FE9C00DF8917 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		F517A41A29531CC300DF8917 /* TopStyleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopStyleView.swift; sourceTree = "<group>"; };
 		F5261770295754C0000342DF /* BottomStyleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomStyleView.swift; sourceTree = "<group>"; };
+		F5E19A3C29646FCD00CCD00A /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		F5E21623294F469A006238A1 /* StyleWeatherPick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StyleWeatherPick.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5E21626294F469A006238A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F5E21628294F469A006238A1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -44,6 +51,7 @@
 		F5E21649294F5C77006238A1 /* NanumGothic-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NanumGothic-ExtraBold.ttf"; sourceTree = "<group>"; };
 		F5E2164D294F5D71006238A1 /* Font+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extension.swift"; sourceTree = "<group>"; };
 		F5E216542950C13B006238A1 /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
+		F5EE6D75295ED8B600C36526 /* StyleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,7 +59,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5EE6D7F295EE46100C36526 /* RxSwift in Frameworks */,
+				F5EE6D7D295EE46100C36526 /* RxRelay in Frameworks */,
 				F5E2163E294F5066006238A1 /* SnapKit in Frameworks */,
+				F5EE6D79295EE46100C36526 /* RxBlocking in Frameworks */,
+				F5EE6D7B295EE46100C36526 /* RxCocoa in Frameworks */,
 				F5E21645294F5AFA006238A1 /* Then in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -63,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				F517A4142952F8BA00DF8917 /* Main */,
+				F52CE2952965DB3000131F01 /* Setting */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -74,8 +87,16 @@
 				F517A4152952F8C900DF8917 /* MainWeatherView.swift */,
 				F517A41A29531CC300DF8917 /* TopStyleView.swift */,
 				F5261770295754C0000342DF /* BottomStyleView.swift */,
+				F5EE6D75295ED8B600C36526 /* StyleCollectionViewCell.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		F52CE2952965DB3000131F01 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Setting;
 			sourceTree = "<group>";
 		};
 		F5E2161A294F469A006238A1 = {
@@ -124,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				F5E2163A294F4700006238A1 /* MainViewController.swift */,
+				F5E19A3C29646FCD00CCD00A /* SettingViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -165,6 +187,10 @@
 			packageProductDependencies = (
 				F5E2163D294F5066006238A1 /* SnapKit */,
 				F5E21644294F5AFA006238A1 /* Then */,
+				F5EE6D78295EE46100C36526 /* RxBlocking */,
+				F5EE6D7A295EE46100C36526 /* RxCocoa */,
+				F5EE6D7C295EE46100C36526 /* RxRelay */,
+				F5EE6D7E295EE46100C36526 /* RxSwift */,
 			);
 			productName = StyleWeatherPick;
 			productReference = F5E21623294F469A006238A1 /* StyleWeatherPick.app */;
@@ -197,6 +223,7 @@
 			packageReferences = (
 				F5E2163C294F5066006238A1 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				F5E21643294F5AFA006238A1 /* XCRemoteSwiftPackageReference "Then" */,
+				F5EE6D77295EE46100C36526 /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = F5E21624294F469A006238A1 /* Products */;
 			projectDirPath = "";
@@ -236,7 +263,9 @@
 				F5E21641294F51AB006238A1 /* MainViewController+Extension.swift in Sources */,
 				F5261771295754C0000342DF /* BottomStyleView.swift in Sources */,
 				F5E21627294F469A006238A1 /* AppDelegate.swift in Sources */,
+				F5EE6D76295ED8B600C36526 /* StyleCollectionViewCell.swift in Sources */,
 				F5E21629294F469A006238A1 /* SceneDelegate.swift in Sources */,
+				F5E19A3D29646FCD00CCD00A /* SettingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,6 +491,14 @@
 				kind = branch;
 			};
 		};
+		F5EE6D77295EE46100C36526 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -474,6 +511,26 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F5E21643294F5AFA006238A1 /* XCRemoteSwiftPackageReference "Then" */;
 			productName = Then;
+		};
+		F5EE6D78295EE46100C36526 /* RxBlocking */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F5EE6D77295EE46100C36526 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxBlocking;
+		};
+		F5EE6D7A295EE46100C36526 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F5EE6D77295EE46100C36526 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		F5EE6D7C295EE46100C36526 /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F5EE6D77295EE46100C36526 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+		F5EE6D7E295EE46100C36526 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F5EE6D77295EE46100C36526 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
