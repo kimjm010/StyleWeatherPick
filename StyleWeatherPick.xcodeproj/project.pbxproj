@@ -12,6 +12,7 @@
 		F517A41B29531CC300DF8917 /* TopStyleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F517A41A29531CC300DF8917 /* TopStyleView.swift */; };
 		F5261771295754C0000342DF /* BottomStyleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5261770295754C0000342DF /* BottomStyleView.swift */; };
 		F52DA188296D804A00F02A68 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52DA187296D804A00F02A68 /* UIFont+Extension.swift */; };
+		F54E13D029C1D366001DDD73 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54E13CF29C1D366001DDD73 /* Service.swift */; };
 		F5E19A3D29646FCD00CCD00A /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E19A3C29646FCD00CCD00A /* SettingViewController.swift */; };
 		F5E21627294F469A006238A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E21626294F469A006238A1 /* AppDelegate.swift */; };
 		F5E21629294F469A006238A1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E21628294F469A006238A1 /* SceneDelegate.swift */; };
@@ -39,6 +40,7 @@
 		F517A41A29531CC300DF8917 /* TopStyleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopStyleView.swift; sourceTree = "<group>"; };
 		F5261770295754C0000342DF /* BottomStyleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomStyleView.swift; sourceTree = "<group>"; };
 		F52DA187296D804A00F02A68 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
+		F54E13CF29C1D366001DDD73 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		F5E19A3C29646FCD00CCD00A /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		F5E21623294F469A006238A1 /* StyleWeatherPick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StyleWeatherPick.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5E21626294F469A006238A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -101,6 +103,14 @@
 			path = Setting;
 			sourceTree = "<group>";
 		};
+		F54E13CE29C1D35A001DDD73 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				F54E13CF29C1D366001DDD73 /* Service.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		F5E2161A294F469A006238A1 = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +130,7 @@
 		F5E21625294F469A006238A1 /* StyleWeatherPick */ = {
 			isa = PBXGroup;
 			children = (
+				F54E13CE29C1D35A001DDD73 /* Service */,
 				F5E2164F2950BDD7006238A1 /* Model */,
 				F5E21646294F5C66006238A1 /* Fonts */,
 				F5E21626294F469A006238A1 /* AppDelegate.swift */,
@@ -258,6 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F517A41B29531CC300DF8917 /* TopStyleView.swift in Sources */,
+				F54E13D029C1D366001DDD73 /* Service.swift in Sources */,
 				F517A4162952F8C900DF8917 /* MainWeatherView.swift in Sources */,
 				F5E2163B294F4700006238A1 /* MainViewController.swift in Sources */,
 				F517A4192952FE9C00DF8917 /* BackgroundView.swift in Sources */,
