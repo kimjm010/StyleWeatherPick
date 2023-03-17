@@ -12,7 +12,13 @@
 		F517A41B29531CC300DF8917 /* TopStyleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F517A41A29531CC300DF8917 /* TopStyleView.swift */; };
 		F5261771295754C0000342DF /* BottomStyleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5261770295754C0000342DF /* BottomStyleView.swift */; };
 		F52DA188296D804A00F02A68 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52DA187296D804A00F02A68 /* UIFont+Extension.swift */; };
-		F54E13D029C1D366001DDD73 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54E13CF29C1D366001DDD73 /* Service.swift */; };
+		F54E13D029C1D366001DDD73 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54E13CF29C1D366001DDD73 /* Network.swift */; };
+		F5C51FD329C30F6900AAD50F /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C51FD229C30F6900AAD50F /* SettingViewModel.swift */; };
+		F5C51FD829C3D2F400AAD50F /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C51FD729C3D2F400AAD50F /* WeatherModel.swift */; };
+		F5C51FDB29C3D52B00AAD50F /* RxAlamofire in Frameworks */ = {isa = PBXBuildFile; productRef = F5C51FDA29C3D52B00AAD50F /* RxAlamofire */; };
+		F5C51FDE29C3DDD700AAD50F /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C51FDD29C3DDD700AAD50F /* WeatherViewModel.swift */; };
+		F5C51FE029C452B300AAD50F /* NetworkGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C51FDF29C452B300AAD50F /* NetworkGenerator.swift */; };
+		F5C51FE229C4566600AAD50F /* ContainerStyleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C51FE129C4566600AAD50F /* ContainerStyleView.swift */; };
 		F5E19A3D29646FCD00CCD00A /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E19A3C29646FCD00CCD00A /* SettingViewController.swift */; };
 		F5E21627294F469A006238A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E21626294F469A006238A1 /* AppDelegate.swift */; };
 		F5E21629294F469A006238A1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E21628294F469A006238A1 /* SceneDelegate.swift */; };
@@ -40,7 +46,13 @@
 		F517A41A29531CC300DF8917 /* TopStyleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopStyleView.swift; sourceTree = "<group>"; };
 		F5261770295754C0000342DF /* BottomStyleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomStyleView.swift; sourceTree = "<group>"; };
 		F52DA187296D804A00F02A68 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
-		F54E13CF29C1D366001DDD73 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		F54E13CF29C1D366001DDD73 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		F5C51FD229C30F6900AAD50F /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
+		F5C51FD429C3CDD300AAD50F /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		F5C51FD729C3D2F400AAD50F /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
+		F5C51FDD29C3DDD700AAD50F /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
+		F5C51FDF29C452B300AAD50F /* NetworkGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkGenerator.swift; sourceTree = "<group>"; };
+		F5C51FE129C4566600AAD50F /* ContainerStyleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerStyleView.swift; sourceTree = "<group>"; };
 		F5E19A3C29646FCD00CCD00A /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		F5E21623294F469A006238A1 /* StyleWeatherPick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StyleWeatherPick.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5E21626294F469A006238A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +80,7 @@
 				F5E2163E294F5066006238A1 /* SnapKit in Frameworks */,
 				F5EE6D79295EE46100C36526 /* RxBlocking in Frameworks */,
 				F5EE6D7B295EE46100C36526 /* RxCocoa in Frameworks */,
+				F5C51FDB29C3D52B00AAD50F /* RxAlamofire in Frameworks */,
 				F5E21645294F5AFA006238A1 /* Then in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -92,6 +105,7 @@
 				F517A41A29531CC300DF8917 /* TopStyleView.swift */,
 				F5261770295754C0000342DF /* BottomStyleView.swift */,
 				F5EE6D75295ED8B600C36526 /* StyleCollectionViewCell.swift */,
+				F5C51FE129C4566600AAD50F /* ContainerStyleView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -106,14 +120,49 @@
 		F54E13CE29C1D35A001DDD73 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				F54E13CF29C1D366001DDD73 /* Service.swift */,
+				F54E13CF29C1D366001DDD73 /* Network.swift */,
+				F5C51FDF29C452B300AAD50F /* NetworkGenerator.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		F5C51FD029C30F4800AAD50F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F5C51FDC29C3DDC400AAD50F /* WeatherViewModel */,
+				F5C51FD129C30F5500AAD50F /* SettingViewModel */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F5C51FD129C30F5500AAD50F /* SettingViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F5C51FD229C30F6900AAD50F /* SettingViewModel.swift */,
+			);
+			path = SettingViewModel;
+			sourceTree = "<group>";
+		};
+		F5C51FD629C3D2E900AAD50F /* WeatherModel */ = {
+			isa = PBXGroup;
+			children = (
+				F5C51FD729C3D2F400AAD50F /* WeatherModel.swift */,
+			);
+			path = WeatherModel;
+			sourceTree = "<group>";
+		};
+		F5C51FDC29C3DDC400AAD50F /* WeatherViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F5C51FDD29C3DDD700AAD50F /* WeatherViewModel.swift */,
+			);
+			path = WeatherViewModel;
 			sourceTree = "<group>";
 		};
 		F5E2161A294F469A006238A1 = {
 			isa = PBXGroup;
 			children = (
+				F5C51FD429C3CDD300AAD50F /* Config.xcconfig */,
 				F5E21625294F469A006238A1 /* StyleWeatherPick */,
 				F5E21624294F469A006238A1 /* Products */,
 			);
@@ -130,17 +179,19 @@
 		F5E21625294F469A006238A1 /* StyleWeatherPick */ = {
 			isa = PBXGroup;
 			children = (
+				F5C51FD629C3D2E900AAD50F /* WeatherModel */,
+				F5C51FD029C30F4800AAD50F /* ViewModel */,
 				F54E13CE29C1D35A001DDD73 /* Service */,
 				F5E2164F2950BDD7006238A1 /* Model */,
 				F5E21646294F5C66006238A1 /* Fonts */,
+				F5E21642294F5AC1006238A1 /* ViewControllers */,
+				F517A4122952F89200DF8917 /* Views */,
+				F5E2163F294F5197006238A1 /* Extensions */,
 				F5E21626294F469A006238A1 /* AppDelegate.swift */,
 				F5E21628294F469A006238A1 /* SceneDelegate.swift */,
 				F5E2162F294F469A006238A1 /* Assets.xcassets */,
 				F5E21631294F469A006238A1 /* LaunchScreen.storyboard */,
 				F5E21634294F469A006238A1 /* Info.plist */,
-				F5E21642294F5AC1006238A1 /* ViewControllers */,
-				F517A4122952F89200DF8917 /* Views */,
-				F5E2163F294F5197006238A1 /* Extensions */,
 			);
 			path = StyleWeatherPick;
 			sourceTree = "<group>";
@@ -205,6 +256,7 @@
 				F5EE6D7A295EE46100C36526 /* RxCocoa */,
 				F5EE6D7C295EE46100C36526 /* RxRelay */,
 				F5EE6D7E295EE46100C36526 /* RxSwift */,
+				F5C51FDA29C3D52B00AAD50F /* RxAlamofire */,
 			);
 			productName = StyleWeatherPick;
 			productReference = F5E21623294F469A006238A1 /* StyleWeatherPick.app */;
@@ -238,6 +290,7 @@
 				F5E2163C294F5066006238A1 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				F5E21643294F5AFA006238A1 /* XCRemoteSwiftPackageReference "Then" */,
 				F5EE6D77295EE46100C36526 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				F5C51FD929C3D52B00AAD50F /* XCRemoteSwiftPackageReference "RxAlamofire" */,
 			);
 			productRefGroup = F5E21624294F469A006238A1 /* Products */;
 			projectDirPath = "";
@@ -269,7 +322,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F517A41B29531CC300DF8917 /* TopStyleView.swift in Sources */,
-				F54E13D029C1D366001DDD73 /* Service.swift in Sources */,
+				F54E13D029C1D366001DDD73 /* Network.swift in Sources */,
 				F517A4162952F8C900DF8917 /* MainWeatherView.swift in Sources */,
 				F5E2163B294F4700006238A1 /* MainViewController.swift in Sources */,
 				F517A4192952FE9C00DF8917 /* BackgroundView.swift in Sources */,
@@ -277,10 +330,15 @@
 				F5E216552950C13B006238A1 /* Styles.swift in Sources */,
 				F5E21641294F51AB006238A1 /* MainViewController+Extension.swift in Sources */,
 				F5261771295754C0000342DF /* BottomStyleView.swift in Sources */,
+				F5C51FE229C4566600AAD50F /* ContainerStyleView.swift in Sources */,
 				F5E21627294F469A006238A1 /* AppDelegate.swift in Sources */,
+				F5C51FE029C452B300AAD50F /* NetworkGenerator.swift in Sources */,
+				F5C51FD329C30F6900AAD50F /* SettingViewModel.swift in Sources */,
+				F5C51FDE29C3DDD700AAD50F /* WeatherViewModel.swift in Sources */,
 				F5EE6D76295ED8B600C36526 /* StyleCollectionViewCell.swift in Sources */,
 				F52DA188296D804A00F02A68 /* UIFont+Extension.swift in Sources */,
 				F5E21629294F469A006238A1 /* SceneDelegate.swift in Sources */,
+				F5C51FD829C3D2F400AAD50F /* WeatherModel.swift in Sources */,
 				F5E19A3D29646FCD00CCD00A /* SettingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -301,6 +359,7 @@
 /* Begin XCBuildConfiguration section */
 		F5E21635294F469A006238A1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F5C51FD429C3CDD300AAD50F /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -349,7 +408,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -361,6 +420,7 @@
 		};
 		F5E21636294F469A006238A1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F5C51FD429C3CDD300AAD50F /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -403,7 +463,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -415,6 +475,7 @@
 		};
 		F5E21638294F469A006238A1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F5C51FD429C3CDD300AAD50F /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -442,6 +503,7 @@
 		};
 		F5E21639294F469A006238A1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F5C51FD429C3CDD300AAD50F /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -491,6 +553,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		F5C51FD929C3D52B00AAD50F /* XCRemoteSwiftPackageReference "RxAlamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RxSwiftCommunity/RxAlamofire.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		F5E2163C294F5066006238A1 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -518,6 +588,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		F5C51FDA29C3D52B00AAD50F /* RxAlamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F5C51FD929C3D52B00AAD50F /* XCRemoteSwiftPackageReference "RxAlamofire" */;
+			productName = RxAlamofire;
+		};
 		F5E2163D294F5066006238A1 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F5E2163C294F5066006238A1 /* XCRemoteSwiftPackageReference "SnapKit" */;

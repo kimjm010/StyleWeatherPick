@@ -1,0 +1,11 @@
+//
+//  Config.xcconfig
+//  StyleWeatherPick
+//
+//  Created by Chris Kim on 2023/03/17.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+API_KEY = ad85e988c8060e8bbc35cb28cab0047f

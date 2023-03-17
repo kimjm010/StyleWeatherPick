@@ -1,32 +1,33 @@
 //
-//  StyleCollectionViewCell.swift
+//  ContainerStyleView.swift
 //  StyleWeatherPick
 //
-//  Created by Chris Kim on 12/30/22.
+//  Created by Chris Kim on 2023/03/17.
 //
 
+import Foundation
 import SnapKit
 import UIKit
 import Then
 
-class StyleCollectionViewCell: UICollectionViewCell {
-    // MARK: - Vars
-    static let identifier = "StyleCollectionViewCell"
+class ContainerStyleView: UIView {
+    var styleTitle: String?
+    var styleImage: UIImage?
     
-    lazy var styleCategoryLabel = UILabel().then {
+    lazy var styleLabel = UILabel().then {
         $0.font = UIFont(name: UIFont.getRegularFont(), size: 15)
-        $0.text = "상의"
-        $0.textColor = .black
+        $0.textColor = .white
         $0.textAlignment = .center
+        $0.text = styleTitle
     }
     
     lazy var styleImageView = UIImageView().then {
-        $0.image = UIImage(named: "top")
+        $0.image = styleImage
         $0.contentMode = .scaleAspectFit
     }
     
     lazy var styleStackView = UIStackView().then {
-        $0.addArrangedSubview(styleCategoryLabel)
+        $0.addArrangedSubview(styleLabel)
         $0.addArrangedSubview(styleImageView)
         
         $0.axis = .vertical
@@ -34,11 +35,12 @@ class StyleCollectionViewCell: UICollectionViewCell {
         $0.alignment = .center
         $0.spacing = 10
     }
-    
+    // MARK: - Initializer
     override init(frame: CGRect) {
         super.init(frame: frame)
-
+        
         configureUI()
+        rxBind()
     }
     
     required init?(coder: NSCoder) {
@@ -48,18 +50,21 @@ class StyleCollectionViewCell: UICollectionViewCell {
     private func configureUI() {
         addSubview(styleStackView)
         
-        styleCategoryLabel.snp.makeConstraints {
-            $0.top.left.equalToSuperview()
+        styleStackView.snp.makeConstraints {
+            $0.left.right.equalToSuperview()
+            $0.centerX.centerY.equalToSuperview()
+        }
+        
+        styleLabel.snp.makeConstraints {
+            $0.left.right.equalToSuperview()
         }
         
         styleImageView.snp.makeConstraints {
-            $0.centerX.centerY.equalToSuperview()
-            $0.height.equalTo(100)
-            $0.width.equalTo(100)
+            $0.height.width.equalTo(100)
         }
+    }
+    
+    private func rxBind() {
         
-        styleStackView.snp.makeConstraints {
-            $0.top.centerX.left.right.top.bottom.equalToSuperview()
-        }
     }
 }
