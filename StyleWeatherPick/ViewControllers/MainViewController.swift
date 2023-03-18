@@ -22,7 +22,9 @@ class MainViewController: UIViewController {
     }
     
     // MARK: - UI
+    lazy var backgroundView = BackgroundView()
     lazy var mainWeatherView = MainWeatherView()
+    lazy var forecastWeatherView = ForecastView()
     lazy var topStyleView = ContainerStyleView(styleTitle: "상의",
                                                styleImage: UIImage(named: "top")!)
     lazy var trouserStyleView = ContainerStyleView(styleTitle: "하의",
@@ -75,14 +77,16 @@ class MainViewController: UIViewController {
         $0.distribution = .fill
         $0.alignment = .center
         $0.spacing = 5
-        $0.backgroundColor = .systemGray6
     }
     
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .black
+        self.view.backgroundColor = .white
+    
         setupScrollView()
+        setupNavBar()
+        
         viewModel.getWeatherData()
         rxBind()
     }
@@ -98,8 +102,20 @@ class MainViewController: UIViewController {
         
         viewModel.forecastSubject
             .withUnretained(self)
+            .debug()
+            .observe(on: MainScheduler.instance)
             .subscribe(onNext: {
-                print(#fileID, #function, #line, "- <#Comment#> \($0.1?.list.count)")
+                print(#fileID, #function, #line, "- <#Comment#> \($0.1)")
+                $0.0.forecastWeatherView.forecastData = $0.1?.list
+            })
+            .disposed(by: disposeBag)
+        
+        navigationItem.rightBarButtonItem?.rx.tap
+            .throttle(.milliseconds(500), scheduler: MainScheduler.instance)
+            .withUnretained(self)
+            .subscribe(onNext: { _ in
+                let settingVC = SettingViewController()
+                self.navigationController?.pushViewController(settingVC, animated: true)
             })
             .disposed(by: disposeBag)
     }
@@ -111,9 +127,11 @@ extension MainViewController {
         let scrollView = UIScrollView().then {
             $0.addSubview(mainWeatherView)
             $0.addSubview(totalStyleStackView)
+            $0.addSubview(forecastWeatherView)
             
             $0.isUserInteractionEnabled = true
             $0.alwaysBounceVertical = true
+            $0.backgroundColor = .clear
         }
         
         mainWeatherView.snp.makeConstraints {
@@ -124,15 +142,42 @@ extension MainViewController {
         totalStyleStackView.snp.makeConstraints {
             $0.top.equalTo(mainWeatherView.minTempLabel.snp.bottom).offset(20)
             $0.centerX.equalToSuperview()
-            $0.left.right.equalToSuperview().offset(20)
+            $0.left.right.equalToSuperview().offset(16)
         }
         
+        forecastWeatherView.snp.makeConstraints {
+            $0.top.equalTo(totalStyleStackView.snp.bottom).offset(20)
+            $0.centerX.equalToSuperview()
+            $0.left.right.equalToSuperview().offset(16)
+        }
+        
+        self.view.addSubview(backgroundView)
         self.view.addSubview(scrollView)
+        
+        backgroundView.snp.makeConstraints {
+            $0.left.right.top.bottom.equalToSuperview()
+        }
         
         scrollView.snp.makeConstraints {
             $0.edges.equalToSuperview()
             $0.center.equalToSuperview()
         }
+    }
+    
+    /// Setup NavigationBar
+    func setupNavBar() {
+        let rightBarButton = UIBarButtonItem(image: UIImage(named: "settings"),
+                                             style: .plain,
+                                             target: nil,
+                                             action: #selector(goToSettings))
+        rightBarButton.tintColor = .secondaryLabel
+        self.navigationItem.setRightBarButton(rightBarButton, animated: true)
+    }
+    
+    @objc
+    func goToSettings() {
+        let settingVC = SettingViewController()
+        self.navigationController?.pushViewController(settingVC, animated: true)
     }
 }
 

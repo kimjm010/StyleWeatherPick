@@ -60,7 +60,20 @@ extension SettingViewController: UIPickerViewDataSource, UIPickerViewDelegate {
             $0.backgroundColor = .clear
         }
         
-        self.view.addSubview(settingStackView)
+        lazy var scrollView = UIScrollView().then {
+            $0.addSubview(settingStackView)
+            
+            $0.isUserInteractionEnabled = true
+            $0.alwaysBounceVertical = true
+            $0.backgroundColor = .clear
+        }
+        
+        self.view.addSubview(scrollView)
+        
+        scrollView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+            $0.center.equalToSuperview()
+        }
         
         genderStackView.snp.makeConstraints {
             $0.left.right.equalToSuperview()
@@ -87,9 +100,7 @@ extension SettingViewController: UIPickerViewDataSource, UIPickerViewDelegate {
         }
         
         settingStackView.snp.makeConstraints {
-            #warning("Todo: - NavigationBar imbed하고 제약 다시 확인 할 것")
-            $0.top.equalToSuperview().offset(50)
-            $0.left.right.equalToSuperview().inset(16)
+            $0.top.left.right.equalToSuperview()
         }
     }
     
