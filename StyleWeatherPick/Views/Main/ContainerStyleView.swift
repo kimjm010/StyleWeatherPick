@@ -15,7 +15,7 @@ class ContainerStyleView: UIView {
     var styleImage: UIImage
     
     lazy var styleLabel = UILabel().then {
-        $0.font = UIFont(name: UIFont.getBoldFont(), size: 15)
+        $0.font = .boldSystemFont(ofSize: 15)
         $0.textColor = .secondaryLabel
         $0.textAlignment = .center
         $0.text = styleTitle
@@ -61,7 +61,7 @@ class ContainerStyleView: UIView {
         }
         
         styleImageView.snp.makeConstraints {
-            $0.height.width.equalTo(100)
+            $0.height.width.equalTo(150)
         }
     }
 }

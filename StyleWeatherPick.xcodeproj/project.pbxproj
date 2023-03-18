@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		F517A4162952F8C900DF8917 /* MainWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F517A4152952F8C900DF8917 /* MainWeatherView.swift */; };
 		F517A4192952FE9C00DF8917 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F517A4182952FE9C00DF8917 /* BackgroundView.swift */; };
-		F517A41B29531CC300DF8917 /* TopStyleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F517A41A29531CC300DF8917 /* TopStyleView.swift */; };
-		F5261771295754C0000342DF /* BottomStyleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5261770295754C0000342DF /* BottomStyleView.swift */; };
 		F52DA188296D804A00F02A68 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52DA187296D804A00F02A68 /* UIFont+Extension.swift */; };
 		F54E13D029C1D366001DDD73 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54E13CF29C1D366001DDD73 /* Network.swift */; };
 		F5C51FD329C30F6900AAD50F /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C51FD229C30F6900AAD50F /* SettingViewModel.swift */; };
@@ -20,6 +18,9 @@
 		F5C51FE029C452B300AAD50F /* NetworkGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C51FDF29C452B300AAD50F /* NetworkGenerator.swift */; };
 		F5C51FE229C4566600AAD50F /* ContainerStyleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C51FE129C4566600AAD50F /* ContainerStyleView.swift */; };
 		F5C51FE529C5541100AAD50F /* Double+Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C51FE429C5541100AAD50F /* Double+Formatter.swift */; };
+		F5C51FE729C5936100AAD50F /* Date+Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C51FE629C5936100AAD50F /* Date+Formatter.swift */; };
+		F5C51FE929C59C1300AAD50F /* ForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C51FE829C59C1300AAD50F /* ForecastView.swift */; };
+		F5C51FEB29C5AEC100AAD50F /* ForecastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C51FEA29C5AEC100AAD50F /* ForecastTableViewCell.swift */; };
 		F5E19A3D29646FCD00CCD00A /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E19A3C29646FCD00CCD00A /* SettingViewController.swift */; };
 		F5E21627294F469A006238A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E21626294F469A006238A1 /* AppDelegate.swift */; };
 		F5E21629294F469A006238A1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E21628294F469A006238A1 /* SceneDelegate.swift */; };
@@ -34,7 +35,6 @@
 		F5E2164C294F5C77006238A1 /* NanumGothic-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F5E21649294F5C77006238A1 /* NanumGothic-ExtraBold.ttf */; };
 		F5E2164E294F5D71006238A1 /* Font+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E2164D294F5D71006238A1 /* Font+Extension.swift */; };
 		F5E216552950C13B006238A1 /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E216542950C13B006238A1 /* Styles.swift */; };
-		F5EE6D76295ED8B600C36526 /* StyleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EE6D75295ED8B600C36526 /* StyleCollectionViewCell.swift */; };
 		F5EE6D79295EE46100C36526 /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = F5EE6D78295EE46100C36526 /* RxBlocking */; };
 		F5EE6D7B295EE46100C36526 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = F5EE6D7A295EE46100C36526 /* RxCocoa */; };
 		F5EE6D7D295EE46100C36526 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = F5EE6D7C295EE46100C36526 /* RxRelay */; };
@@ -44,8 +44,6 @@
 /* Begin PBXFileReference section */
 		F517A4152952F8C900DF8917 /* MainWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWeatherView.swift; sourceTree = "<group>"; };
 		F517A4182952FE9C00DF8917 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
-		F517A41A29531CC300DF8917 /* TopStyleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopStyleView.swift; sourceTree = "<group>"; };
-		F5261770295754C0000342DF /* BottomStyleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomStyleView.swift; sourceTree = "<group>"; };
 		F52DA187296D804A00F02A68 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		F54E13CF29C1D366001DDD73 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		F5C51FD229C30F6900AAD50F /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
@@ -55,6 +53,9 @@
 		F5C51FDF29C452B300AAD50F /* NetworkGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkGenerator.swift; sourceTree = "<group>"; };
 		F5C51FE129C4566600AAD50F /* ContainerStyleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerStyleView.swift; sourceTree = "<group>"; };
 		F5C51FE429C5541100AAD50F /* Double+Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Formatter.swift"; sourceTree = "<group>"; };
+		F5C51FE629C5936100AAD50F /* Date+Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Formatter.swift"; sourceTree = "<group>"; };
+		F5C51FE829C59C1300AAD50F /* ForecastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastView.swift; sourceTree = "<group>"; };
+		F5C51FEA29C5AEC100AAD50F /* ForecastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastTableViewCell.swift; sourceTree = "<group>"; };
 		F5E19A3C29646FCD00CCD00A /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		F5E21623294F469A006238A1 /* StyleWeatherPick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StyleWeatherPick.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5E21626294F469A006238A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -69,7 +70,6 @@
 		F5E21649294F5C77006238A1 /* NanumGothic-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NanumGothic-ExtraBold.ttf"; sourceTree = "<group>"; };
 		F5E2164D294F5D71006238A1 /* Font+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extension.swift"; sourceTree = "<group>"; };
 		F5E216542950C13B006238A1 /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
-		F5EE6D75295ED8B600C36526 /* StyleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,10 +104,9 @@
 			children = (
 				F517A4182952FE9C00DF8917 /* BackgroundView.swift */,
 				F517A4152952F8C900DF8917 /* MainWeatherView.swift */,
-				F517A41A29531CC300DF8917 /* TopStyleView.swift */,
-				F5261770295754C0000342DF /* BottomStyleView.swift */,
-				F5EE6D75295ED8B600C36526 /* StyleCollectionViewCell.swift */,
 				F5C51FE129C4566600AAD50F /* ContainerStyleView.swift */,
+				F5C51FE829C59C1300AAD50F /* ForecastView.swift */,
+				F5C51FEA29C5AEC100AAD50F /* ForecastTableViewCell.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -165,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				F5C51FE429C5541100AAD50F /* Double+Formatter.swift */,
+				F5C51FE629C5936100AAD50F /* Date+Formatter.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -332,23 +332,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F517A41B29531CC300DF8917 /* TopStyleView.swift in Sources */,
 				F54E13D029C1D366001DDD73 /* Network.swift in Sources */,
 				F517A4162952F8C900DF8917 /* MainWeatherView.swift in Sources */,
 				F5E2163B294F4700006238A1 /* MainViewController.swift in Sources */,
+				F5C51FE729C5936100AAD50F /* Date+Formatter.swift in Sources */,
 				F517A4192952FE9C00DF8917 /* BackgroundView.swift in Sources */,
 				F5E2164E294F5D71006238A1 /* Font+Extension.swift in Sources */,
 				F5E216552950C13B006238A1 /* Styles.swift in Sources */,
 				F5C51FE529C5541100AAD50F /* Double+Formatter.swift in Sources */,
 				F5E21641294F51AB006238A1 /* MainViewController+Extension.swift in Sources */,
-				F5261771295754C0000342DF /* BottomStyleView.swift in Sources */,
 				F5C51FE229C4566600AAD50F /* ContainerStyleView.swift in Sources */,
 				F5E21627294F469A006238A1 /* AppDelegate.swift in Sources */,
+				F5C51FE929C59C1300AAD50F /* ForecastView.swift in Sources */,
 				F5C51FE029C452B300AAD50F /* NetworkGenerator.swift in Sources */,
 				F5C51FD329C30F6900AAD50F /* SettingViewModel.swift in Sources */,
 				F5C51FDE29C3DDD700AAD50F /* WeatherViewModel.swift in Sources */,
-				F5EE6D76295ED8B600C36526 /* StyleCollectionViewCell.swift in Sources */,
 				F52DA188296D804A00F02A68 /* UIFont+Extension.swift in Sources */,
+				F5C51FEB29C5AEC100AAD50F /* ForecastTableViewCell.swift in Sources */,
 				F5E21629294F469A006238A1 /* SceneDelegate.swift in Sources */,
 				F5C51FD829C3D2F400AAD50F /* WeatherModel.swift in Sources */,
 				F5E19A3D29646FCD00CCD00A /* SettingViewController.swift in Sources */,

@@ -20,7 +20,6 @@ class WeatherViewModel {
     func getWeatherData() {
         Network.shared.fetchCurrentWeatherData()
             .withUnretained(self)
-            .debug()
             .subscribe(onNext: {
                 $0.0.weatherSubject.onNext($0.1)
             })
@@ -28,11 +27,9 @@ class WeatherViewModel {
         
         Network.shared.fetchForecastWeatherData()
             .withUnretained(self)
-            .debug()
             .subscribe(onNext: {
                 do {
                     let result = try JSONDecoder().decode(Forecast.self, from: $0.1)
-                    print(#fileID, #function, #line, "- <#Comment#> \($0.1) \(result)")
                     $0.0.forecastSubject.onNext(result)
                 } catch {
                     print(error)
