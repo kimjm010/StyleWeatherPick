@@ -11,12 +11,12 @@ import UIKit
 import Then
 
 class ContainerStyleView: UIView {
-    var styleTitle: String?
-    var styleImage: UIImage?
+    var styleTitle: String
+    var styleImage: UIImage
     
     lazy var styleLabel = UILabel().then {
-        $0.font = UIFont(name: UIFont.getRegularFont(), size: 15)
-        $0.textColor = .white
+        $0.font = UIFont(name: UIFont.getBoldFont(), size: 15)
+        $0.textColor = .secondaryLabel
         $0.textAlignment = .center
         $0.text = styleTitle
     }
@@ -33,14 +33,14 @@ class ContainerStyleView: UIView {
         $0.axis = .vertical
         $0.distribution = .fill
         $0.alignment = .center
-        $0.spacing = 10
+        $0.spacing = 5
     }
     // MARK: - Initializer
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        
+    init(styleTitle: String, styleImage: UIImage) {
+        self.styleTitle = styleTitle
+        self.styleImage = styleImage
+        super.init(frame: .zero)
         configureUI()
-        rxBind()
     }
     
     required init?(coder: NSCoder) {
@@ -50,9 +50,10 @@ class ContainerStyleView: UIView {
     private func configureUI() {
         addSubview(styleStackView)
         
+        styleStackView.layer.cornerRadius = 10
+        
         styleStackView.snp.makeConstraints {
-            $0.left.right.equalToSuperview()
-            $0.centerX.centerY.equalToSuperview()
+            $0.left.right.height.width.equalToSuperview()
         }
         
         styleLabel.snp.makeConstraints {
@@ -62,9 +63,5 @@ class ContainerStyleView: UIView {
         styleImageView.snp.makeConstraints {
             $0.height.width.equalTo(100)
         }
-    }
-    
-    private func rxBind() {
-        
     }
 }
