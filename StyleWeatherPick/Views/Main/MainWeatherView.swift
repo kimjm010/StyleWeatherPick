@@ -99,11 +99,11 @@ class MainWeatherView: UIView {
         itemEmitter
             .withUnretained(self)
             .subscribe(onNext: {
-                $0.0.tempLabel.text = "\($0.1?.main.temp ?? 0) ℃"
+                $0.0.tempLabel.text = "\($0.1?.main.temp.temperatureString ?? "")"
                 $0.0.descriptionLabel.text = "\($0.1?.weather.first?.description ?? "")"
-                $0.0.feels_likeTempLabel.text = "체감온도: \($0.1?.main.feels_like ?? 0) ℃"
-                $0.0.maxTempLabel.text = "최고: \($0.1?.main.temp_max ?? 0)"
-                $0.0.minTempLabel.text = "최저: \($0.1?.main.temp_min ?? 0)"
+                $0.0.feels_likeTempLabel.text = "체감온도: \($0.1?.main.feels_like.temperatureString ?? "")"
+                $0.0.maxTempLabel.text = "최고: \($0.1?.main.temp_max.temperatureString ?? "")"
+                $0.0.minTempLabel.text = "최저: \($0.1?.main.temp_min.temperatureString ?? "")"
             })
             .disposed(by: disposeBag)
     }

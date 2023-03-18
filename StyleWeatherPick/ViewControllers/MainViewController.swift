@@ -22,44 +22,66 @@ class MainViewController: UIViewController {
     }
     
     // MARK: - UI
-    #warning("Todo: - CoreLocation -> 위치 가져오기 Geometry")
     lazy var mainWeatherView = MainWeatherView()
+    lazy var topStyleView = ContainerStyleView(styleTitle: "상의",
+                                               styleImage: UIImage(named: "top")!)
+    lazy var trouserStyleView = ContainerStyleView(styleTitle: "하의",
+                                                   styleImage: UIImage(named: "trouser")!)
+    lazy var outerStyleView = ContainerStyleView(styleTitle: "아우터",
+                                                 styleImage: UIImage(named: "outer")!)
+    lazy var shoesStyleView = ContainerStyleView(styleTitle: "신발",
+                                                 styleImage: UIImage(named: "shoes")!)
+    lazy var bagStyleView = ContainerStyleView(styleTitle: "가방",
+                                               styleImage: UIImage(named: "bag")!)
+    lazy var accStyleView = ContainerStyleView(styleTitle: "악세사리",
+                                               styleImage: UIImage(named: "acc")!)
     
-    /*
-     lazy var styleCollectionView: UICollectionView = {
-         let flowlayout = UICollectionViewFlowLayout()
-         flowlayout.scrollDirection = .vertical
-         flowlayout.minimumInteritemSpacing = 10
-         flowlayout.minimumLineSpacing = 10
-         flowlayout.sectionInset = UIEdgeInsets(top: 0, left: -10, bottom: 0, right: 0)
-         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: flowlayout)
-         collectionView.register(StyleCollectionViewCell.self,
-                     forCellWithReuseIdentifier: StyleCollectionViewCell.identifier)
-         collectionView.backgroundColor = .blue
-         collectionView.allowsSelection = true
-         collectionView.showsHorizontalScrollIndicator = false
-         collectionView.isScrollEnabled = true
-         collectionView.delegate = self
-         collectionView.dataSource = self
-         collectionView.backgroundColor = .blue
-         
-         return collectionView
-     }()
-     
-     var tempData = [
-         StyleWeather(styleName: "top", styleImageName: "top"),
-         StyleWeather(styleName: "bottom", styleImageName: "bottom"),
-         StyleWeather(styleName: "outer", styleImageName: "outer"),
-         StyleWeather(styleName: "shoes", styleImageName: "shoes"),
-         StyleWeather(styleName: "bag", styleImageName: "bag"),
-         StyleWeather(styleName: "Accessory", styleImageName: "acc")
-     ]
-     */
+    lazy var firstStyleStackView = UIStackView().then {
+        $0.addArrangedSubview(topStyleView)
+        $0.addArrangedSubview(trouserStyleView)
+        
+        $0.axis = .horizontal
+        $0.distribution = .fill
+        $0.alignment = .center
+        $0.spacing = 5
+    }
     
+    lazy var secondStyleStackView = UIStackView().then {
+        $0.addArrangedSubview(outerStyleView)
+        $0.addArrangedSubview(shoesStyleView)
+        
+        $0.axis = .horizontal
+        $0.distribution = .fill
+        $0.alignment = .center
+        $0.spacing = 5
+    }
+    
+    lazy var thirdStyleStackView = UIStackView().then {
+        $0.addArrangedSubview(bagStyleView)
+        $0.addArrangedSubview(accStyleView)
+        
+        $0.axis = .horizontal
+        $0.distribution = .fill
+        $0.alignment = .center
+        $0.spacing = 5
+    }
+    
+    lazy var totalStyleStackView = UIStackView().then {
+        $0.addArrangedSubview(firstStyleStackView)
+        $0.addArrangedSubview(secondStyleStackView)
+        $0.addArrangedSubview(thirdStyleStackView)
+        
+        $0.axis = .vertical
+        $0.distribution = .fill
+        $0.alignment = .center
+        $0.spacing = 5
+        $0.backgroundColor = .systemGray6
+    }
     
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = .black
         setupScrollView()
         viewModel.getWeatherData()
         rxBind()
@@ -76,7 +98,6 @@ class MainViewController: UIViewController {
         
         viewModel.forecastSubject
             .withUnretained(self)
-            .debug()
             .subscribe(onNext: {
                 print(#fileID, #function, #line, "- <#Comment#> \($0.1?.list.count)")
             })
@@ -87,26 +108,24 @@ class MainViewController: UIViewController {
 extension MainViewController {
     /// Setup ScrollView
     func setupScrollView() {
-        let mainWeatherView = MainWeatherView()
-        
         let scrollView = UIScrollView().then {
             $0.addSubview(mainWeatherView)
-//            $0.addSubview(styleCollectionView)
+            $0.addSubview(totalStyleStackView)
             
             $0.isUserInteractionEnabled = true
             $0.alwaysBounceVertical = true
         }
         
         mainWeatherView.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(20)
+            $0.top.equalToSuperview().offset(10)
             $0.centerX.equalToSuperview()
         }
         
-//        styleCollectionView.snp.makeConstraints {
-//            $0.top.equalTo(mainWeatherView.snp.bottom).offset(10)
-//            $0.left.right.equalToSuperview()
-//            $0.height.equalTo(300)
-//        }
+        totalStyleStackView.snp.makeConstraints {
+            $0.top.equalTo(mainWeatherView.minTempLabel.snp.bottom).offset(20)
+            $0.centerX.equalToSuperview()
+            $0.left.right.equalToSuperview().offset(20)
+        }
         
         self.view.addSubview(scrollView)
         
@@ -176,41 +195,6 @@ extension MainViewController: CLLocationManagerDelegate {
         print(#fileID, #function, #line, "- <#Comment#> \(error)")
     }
 }
-
-
-
-/*
- extension MainViewController: UICollectionViewDelegate {
-     
- }
-
-
-
- extension MainViewController: UICollectionViewDataSource {
-     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-         return tempData.count
-     }
-     
-     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: StyleCollectionViewCell.identifier,
-                                                       for: indexPath) as! StyleCollectionViewCell
-         let styleItem = tempData[indexPath.item]
-         cell.styleCategoryLabel.text = styleItem.styleName
-         cell.styleImageView.image = UIImage(named: styleItem.styleImageName)
-         
-         return cell
-     }
- }
- 
- extension MainViewController: UICollectionViewDelegateFlowLayout {
-     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-         return CGSize(width: 150, height: 150)
-     }
- }
- */
-
-
-
 
 
 
