@@ -35,7 +35,6 @@ class SettingViewController: UIViewController {
 
 
 
-
 extension SettingViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     private func configuerUI() {
         let genderStackView = createGenderStackView()
@@ -71,8 +70,7 @@ extension SettingViewController: UIPickerViewDataSource, UIPickerViewDelegate {
         self.view.addSubview(scrollView)
         
         scrollView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
-            $0.center.equalToSuperview()
+            $0.edges.equalToSuperview().inset(16)
         }
         
         genderStackView.snp.makeConstraints {
@@ -100,7 +98,8 @@ extension SettingViewController: UIPickerViewDataSource, UIPickerViewDelegate {
         }
         
         settingStackView.snp.makeConstraints {
-            $0.top.left.right.equalToSuperview()
+            $0.edges.equalTo(scrollView.contentLayoutGuide.snp.edges)
+            $0.width.equalTo(scrollView.frameLayoutGuide.snp.width)
         }
     }
     
