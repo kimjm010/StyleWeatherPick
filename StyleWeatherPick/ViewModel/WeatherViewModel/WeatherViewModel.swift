@@ -14,7 +14,7 @@ typealias ErrorInfo<T> = (error: Error, type: T?)
 
 class WeatherViewModel {
     var weatherSubject = BehaviorSubject<WeatherSummary?>(value: nil)
-    var forecastSubject = BehaviorSubject<Forecast?>(value: nil)
+    var forecastSubject = BehaviorSubject<[Forecast.ForecastItem]?>(value: [])
     private let disposeBag = DisposeBag()
     
     func getWeatherData() {
@@ -27,10 +27,11 @@ class WeatherViewModel {
         
         Network.shared.fetchForecastWeatherData()
             .withUnretained(self)
+            .debug()
             .subscribe(onNext: {
                 do {
                     let result = try JSONDecoder().decode(Forecast.self, from: $0.1)
-                    $0.0.forecastSubject.onNext(result)
+                    $0.0.forecastSubject.onNext(result.list)
                 } catch {
                     print(error)
                 }

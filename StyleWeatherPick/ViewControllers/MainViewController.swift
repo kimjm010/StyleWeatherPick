@@ -79,6 +79,18 @@ class MainViewController: UIViewController {
         $0.spacing = 5
     }
     
+    lazy var containerView = UIStackView().then {
+        $0.addArrangedSubview(mainWeatherView)
+        $0.addArrangedSubview(totalStyleStackView)
+        $0.addArrangedSubview(forecastWeatherView)
+        
+        $0.axis = .vertical
+        $0.distribution = .fill
+        $0.alignment = .center
+        $0.spacing = 10
+        $0.backgroundColor = .clear
+    }
+    
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -106,7 +118,7 @@ class MainViewController: UIViewController {
             .observe(on: MainScheduler.instance)
             .subscribe(onNext: {
                 print(#fileID, #function, #line, "- <#Comment#> \($0.1)")
-                $0.0.forecastWeatherView.forecastData = $0.1?.list
+                $0.0.forecastWeatherView.forecastData = $0.1
             })
             .disposed(by: disposeBag)
         
@@ -125,30 +137,33 @@ extension MainViewController {
     /// Setup ScrollView
     func setupScrollView() {
         let scrollView = UIScrollView().then {
-            $0.addSubview(mainWeatherView)
-            $0.addSubview(totalStyleStackView)
-            $0.addSubview(forecastWeatherView)
+            $0.addSubview(containerView)
             
             $0.isUserInteractionEnabled = true
             $0.alwaysBounceVertical = true
-            $0.backgroundColor = .clear
+//            $0.backgroundColor = .clear
         }
         
         mainWeatherView.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(10)
+            $0.top.equalToSuperview()
             $0.centerX.equalToSuperview()
         }
         
         totalStyleStackView.snp.makeConstraints {
-            $0.top.equalTo(mainWeatherView.minTempLabel.snp.bottom).offset(20)
+            $0.top.equalTo(mainWeatherView.minTempLabel.snp.bottom)
             $0.centerX.equalToSuperview()
-            $0.left.right.equalToSuperview().offset(16)
+            $0.left.right.equalToSuperview()
         }
         
         forecastWeatherView.snp.makeConstraints {
-            $0.top.equalTo(totalStyleStackView.snp.bottom).offset(20)
+            $0.top.equalTo(totalStyleStackView.snp.bottom)
             $0.centerX.equalToSuperview()
-            $0.left.right.equalToSuperview().offset(16)
+            $0.left.right.equalToSuperview()
+        }
+        
+        containerView.snp.makeConstraints {
+            $0.edges.equalTo(scrollView.contentLayoutGuide.snp.edges)
+            $0.width.equalTo(scrollView.frameLayoutGuide.snp.width)
         }
         
         self.view.addSubview(backgroundView)
@@ -160,7 +175,6 @@ extension MainViewController {
         
         scrollView.snp.makeConstraints {
             $0.edges.equalToSuperview()
-            $0.center.equalToSuperview()
         }
     }
     
