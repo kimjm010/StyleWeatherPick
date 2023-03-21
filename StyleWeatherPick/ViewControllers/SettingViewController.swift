@@ -13,7 +13,6 @@ class SettingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.view.backgroundColor = .systemGray6
         
         configuerUI()
@@ -26,7 +25,6 @@ class SettingViewController: UIViewController {
             
             for names in UIFont.fontNames(forFamilyName: family) {
             print("== \(names)")
-                
             }
         }
     }
@@ -386,8 +384,7 @@ extension SettingViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     }
     
     private func createStylePickerView() -> UIPickerView {
-        var pickerView = UIPickerView()
-        
+        let pickerView = UIPickerView()
         pickerView.dataSource = self
         pickerView.delegate = self
         pickerView.layer.cornerRadius = 4

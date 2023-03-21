@@ -15,6 +15,7 @@ import Then
 class ForecastView: UIView {
     // MARK: - Vars
     private var itemEmitter = BehaviorRelay<[Forecast.ForecastItem]>(value: [])
+    private let viewModel = WeatherViewModel()
     private let disposeBag = DisposeBag()
     
     var forecastData: [Forecast.ForecastItem]? {
@@ -26,7 +27,7 @@ class ForecastView: UIView {
     // MARK: - UI
     lazy var forecastLabel = UILabel().then {
         $0.textColor = .secondaryLabel
-        $0.font = .systemFont(ofSize: 15, weight: .bold)
+        $0.font = .systemFont(ofSize: 25, weight: .bold)
         $0.text = "Weather Forecast"
     }
     
@@ -46,10 +47,10 @@ class ForecastView: UIView {
     }()
     
     override init(frame: CGRect) {
-        super.init(frame: frame)
-        
+        super.init(frame: .zero)
         configureUI()
         rxBind()
+        print(#fileID, #function, #line, "- <#Comment#> \(forecastData?.count)")
     }
     
     required init?(coder: NSCoder) {
@@ -62,24 +63,22 @@ class ForecastView: UIView {
         
         forecastLabel.snp.makeConstraints {
             $0.top.left.right.equalToSuperview().inset(16)
-            $0.height.equalTo(40)
+            $0.height.equalTo(55)
         }
         
         forecastTableView.snp.makeConstraints {
             $0.top.equalTo(forecastLabel.snp.bottom).offset(10)
             $0.left.right.equalTo(forecastLabel.snp.horizontalEdges)
-            $0.bottom.equalToSuperview()
+//            $0.bottom.equalToSuperview()
+            $0.height.equalTo(400)
         }
     }
     
     private func rxBind() {
-        itemEmitter
-            .debug()
-            .bind(to: forecastTableView.rx.items(cellIdentifier: ForecastTableViewCell.identifier,
-                                                 cellType: ForecastTableViewCell.self)) { (row, item, cell) in
-                cell.temperatureLabel.text = item.main.temp.temperatureString
-                cell.selectionStyle = .none
-            }
-                                                 .disposed(by: disposeBag)
+        viewModel.forecastSubject
+            .subscribe(onNext: {
+                print(#fileID, #function, #line, "- <#Comment#> \($0?.count)")
+            })
+            .disposed(by: disposeBag)
     }
 }
