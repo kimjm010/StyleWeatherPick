@@ -18,12 +18,13 @@ class Network {
     private let latitude = 37.5172
     private let longitude = 127.0473
     private let units = "metric"
+    private let lang = "kr"
     private var currentWeatherBaseUrl: String {
-        return "https://api.openweathermap.org/data/2.5/weather?lat=\(latitude)&lon=\(longitude)&appid=\(apiKey)&units=\(units)"
+        return "https://api.openweathermap.org/data/2.5/weather?lat=\(latitude)&lon=\(longitude)&appid=\(apiKey)&units=\(units)&lang=\(lang)"
     }
     
     private var forecastWeatherBaseUrl: String {
-        return "https://api.openweathermap.org/data/2.5/forecast?lat=\(latitude)&lon=\(longitude)&appid=\(apiKey)&units=\(units)"
+        return "https://api.openweathermap.org/data/2.5/forecast?lat=\(latitude)&lon=\(longitude)&appid=\(apiKey)&units=\(units)&lang=\(lang)"
     }
     
     func fetchCurrentWeatherData() -> Observable<WeatherSummary> {

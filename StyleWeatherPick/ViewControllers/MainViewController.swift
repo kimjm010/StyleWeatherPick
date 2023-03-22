@@ -117,7 +117,6 @@ class MainViewController: UIViewController {
             .debug()
             .observe(on: MainScheduler.instance)
             .subscribe(onNext: {
-                print(#fileID, #function, #line, "- <#Comment#> \($0.1)")
                 $0.0.forecastWeatherView.forecastData = $0.1
             })
             .disposed(by: disposeBag)

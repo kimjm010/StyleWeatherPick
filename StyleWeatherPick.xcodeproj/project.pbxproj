@@ -15,7 +15,6 @@
 		F5C51FD829C3D2F400AAD50F /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C51FD729C3D2F400AAD50F /* WeatherModel.swift */; };
 		F5C51FDB29C3D52B00AAD50F /* RxAlamofire in Frameworks */ = {isa = PBXBuildFile; productRef = F5C51FDA29C3D52B00AAD50F /* RxAlamofire */; };
 		F5C51FDE29C3DDD700AAD50F /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C51FDD29C3DDD700AAD50F /* WeatherViewModel.swift */; };
-		F5C51FE029C452B300AAD50F /* NetworkGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C51FDF29C452B300AAD50F /* NetworkGenerator.swift */; };
 		F5C51FE229C4566600AAD50F /* ContainerStyleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C51FE129C4566600AAD50F /* ContainerStyleView.swift */; };
 		F5C51FE529C5541100AAD50F /* Double+Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C51FE429C5541100AAD50F /* Double+Formatter.swift */; };
 		F5C51FE729C5936100AAD50F /* Date+Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C51FE629C5936100AAD50F /* Date+Formatter.swift */; };
@@ -50,7 +49,6 @@
 		F5C51FD429C3CDD300AAD50F /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		F5C51FD729C3D2F400AAD50F /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 		F5C51FDD29C3DDD700AAD50F /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
-		F5C51FDF29C452B300AAD50F /* NetworkGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkGenerator.swift; sourceTree = "<group>"; };
 		F5C51FE129C4566600AAD50F /* ContainerStyleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerStyleView.swift; sourceTree = "<group>"; };
 		F5C51FE429C5541100AAD50F /* Double+Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Formatter.swift"; sourceTree = "<group>"; };
 		F5C51FE629C5936100AAD50F /* Date+Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Formatter.swift"; sourceTree = "<group>"; };
@@ -122,7 +120,6 @@
 			isa = PBXGroup;
 			children = (
 				F54E13CF29C1D366001DDD73 /* Network.swift */,
-				F5C51FDF29C452B300AAD50F /* NetworkGenerator.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -344,7 +341,6 @@
 				F5C51FE229C4566600AAD50F /* ContainerStyleView.swift in Sources */,
 				F5E21627294F469A006238A1 /* AppDelegate.swift in Sources */,
 				F5C51FE929C59C1300AAD50F /* ForecastView.swift in Sources */,
-				F5C51FE029C452B300AAD50F /* NetworkGenerator.swift in Sources */,
 				F5C51FD329C30F6900AAD50F /* SettingViewModel.swift in Sources */,
 				F5C51FDE29C3DDD700AAD50F /* WeatherViewModel.swift in Sources */,
 				F52DA188296D804A00F02A68 /* UIFont+Extension.swift in Sources */,

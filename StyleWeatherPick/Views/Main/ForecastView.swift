@@ -41,7 +41,8 @@ class ForecastView: UIView {
         tableView.showsVerticalScrollIndicator = false
         tableView.alwaysBounceVertical = false
         tableView.bounces = false
-        tableView.rowHeight = UITableView.automaticDimension
+        tableView.rowHeight = 50
+        tableView.backgroundColor = .clear
         
         return tableView
     }()
@@ -50,7 +51,6 @@ class ForecastView: UIView {
         super.init(frame: .zero)
         configureUI()
         rxBind()
-        print(#fileID, #function, #line, "- <#Comment#> \(forecastData?.count)")
     }
     
     required init?(coder: NSCoder) {
@@ -58,6 +58,7 @@ class ForecastView: UIView {
     }
     
     private func configureUI() {
+        self.backgroundColor = .clear
         addSubview(forecastLabel)
         addSubview(forecastTableView)
         
@@ -69,16 +70,19 @@ class ForecastView: UIView {
         forecastTableView.snp.makeConstraints {
             $0.top.equalTo(forecastLabel.snp.bottom).offset(10)
             $0.left.right.equalTo(forecastLabel.snp.horizontalEdges)
-//            $0.bottom.equalToSuperview()
             $0.height.equalTo(400)
+            $0.bottom.equalToSuperview()
         }
     }
     
     private func rxBind() {
-        viewModel.forecastSubject
-            .subscribe(onNext: {
-                print(#fileID, #function, #line, "- <#Comment#> \($0?.count)")
-            })
+        itemEmitter
+            .bind(to: forecastTableView.rx.items(cellIdentifier: ForecastTableViewCell.identifier,
+                                                 cellType: ForecastTableViewCell.self)) { (row, item, cell) in
+                cell.forecastItem = item
+                cell.selectionStyle = .none
+                cell.backgroundColor = .clear
+            }
             .disposed(by: disposeBag)
     }
 }

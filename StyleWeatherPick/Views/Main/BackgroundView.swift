@@ -18,7 +18,7 @@ class BackgroundView: UIView {
     
     lazy var dimmingView = UIView().then {
         $0.backgroundColor = .black
-        $0.alpha = 0.3
+        $0.alpha = 0.1
     }
     
     override init(frame: CGRect) {
