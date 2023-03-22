@@ -36,7 +36,11 @@ class ForecastTableViewCell: UITableViewCell {
         $0.backgroundColor = .clear
     }
     
-    lazy var descriptionLabel = UILabel().then {
+    lazy var minTempLabel = UILabel().then {
+        $0.textColor = .secondaryLabel
+    }
+    
+    lazy var maxTempLabel = UILabel().then {
         $0.textColor = .secondaryLabel
     }
     
@@ -44,28 +48,16 @@ class ForecastTableViewCell: UITableViewCell {
         $0.textColor = .secondaryLabel
     }
     
-    lazy var forecastStackView = UIStackView().then {
-        $0.addArrangedSubview(labelStackView)
-        $0.addArrangedSubview(iconImageView)
-        $0.addArrangedSubview(descriptionLabel)
-        $0.addArrangedSubview(temperatureLabel)
-        
-        $0.axis = .horizontal
-        $0.distribution = .fill
-        $0.alignment = .center
-        $0.spacing = 3
+    var forecastItem: Forecast.ForecastItem? {
+        didSet {
+            dateLabel.text = forecastItem?.date.dateToString
+            timeLabel.text = forecastItem?.date.timeToString
+            temperatureLabel.text = forecastItem?.main.temp.temperatureString
+            minTempLabel.text = forecastItem?.main.temp_min.temperatureString
+            maxTempLabel.text = forecastItem?.main.temp_max.temperatureString
+            iconImageView.image = UIImage(named: "\(forecastItem?.weather.first?.icon ?? "")")
+        }
     }
-    
-    var forecastItem: Forecast.ForecastItem?
-//    {
-//        didSet {
-//            dateLabel.text = forecastItem?.date.dateToString
-//            timeLabel.text = forecastItem?.date.timeToString
-//            temperatureLabel.text = forecastItem?.main.temp.temperatureString
-//            descriptionLabel.text = forecastItem?.weather.first?.description
-//            iconImageView.image = UIImage(named: "\(forecastItem?.weather.first?.icon ?? "")")
-//        }
-//    }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -79,28 +71,50 @@ class ForecastTableViewCell: UITableViewCell {
     private func configureUI() {
         addSubview(labelStackView)
         addSubview(iconImageView)
-        addSubview(descriptionLabel)
-        addSubview(temperatureLabel)
-        
-        temperatureLabel.snp.makeConstraints {
-            $0.right.equalToSuperview()
-            $0.top.bottom.equalToSuperview()
-        }
-        
-        descriptionLabel.snp.makeConstraints {
-            $0.right.equalTo(temperatureLabel.snp.left).inset(5)
-            $0.top.bottom.equalToSuperview()
-        }
-        
-        iconImageView.snp.makeConstraints {
-            $0.right.equalTo(descriptionLabel.snp.left).inset(5)
-            $0.top.bottom.equalToSuperview()
-        }
+        addSubview(minTempLabel)
+        addSubview(maxTempLabel)
         
         labelStackView.snp.makeConstraints {
             $0.left.equalToSuperview()
-            $0.right.equalTo(iconImageView.snp.left).inset(5)
-            $0.top.bottom.equalToSuperview()
+            $0.centerY.equalToSuperview()
         }
+        
+        iconImageView.snp.makeConstraints {
+            $0.centerY.equalToSuperview()
+            $0.left.equalTo(labelStackView.snp.right).offset(15)
+            $0.height.width.equalTo(30)
+        }
+        
+        maxTempLabel.snp.makeConstraints {
+            $0.right.equalToSuperview()
+            $0.centerY.equalToSuperview()
+        }
+        
+        minTempLabel.snp.makeConstraints {
+            $0.centerY.equalToSuperview()
+            $0.right.equalTo(maxTempLabel.snp.left).offset(-20)
+        }
+        
+//        temperatureLabel.snp.makeConstraints {
+//            $0.right.equalToSuperview()
+//            $0.top.bottom.equalToSuperview()
+//        }
+//
+//        descriptionLabel.snp.makeConstraints {
+//            $0.right.equalTo(temperatureLabel.snp.left).inset(5)
+//            $0.top.bottom.equalToSuperview()
+//        }
+//
+//        iconImageView.snp.makeConstraints {
+//            $0.right.equalTo(descriptionLabel.snp.left).inset(5)
+//            $0.top.bottom.equalToSuperview()
+//            $0.height.width.equalTo(30)
+//        }
+//
+//        labelStackView.snp.makeConstraints {
+//            $0.left.equalToSuperview()
+//            $0.right.equalTo(iconImageView.snp.left).inset(5)
+//            $0.top.bottom.equalToSuperview()
+//        }
     }
 }
